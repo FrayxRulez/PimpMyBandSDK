@@ -12,7 +12,7 @@ namespace PimpMyBand
 {
     public static class BandManager
     {
-        public static async Task<bool> IsBandConnectedAsync()
+        public static async Task<bool> IsConnectedAsync()
         {
             try
             {
@@ -27,6 +27,12 @@ namespace PimpMyBand
             return false;
         }
 
+        /// <summary>
+        /// Launch Pimp my Band that let the user set the wallpaper
+        /// </summary>
+        /// <param name="image">Must be 310x102 with no transparency</param>
+        /// <param name="accent">Must be a solid color (Alpha is ignored)</param>
+        /// <returns></returns>
         public static async Task SetWallpaperAsync(WriteableBitmap image, Color accent)
         {
             if (image.PixelWidth != 310 || image.PixelHeight != 102)
