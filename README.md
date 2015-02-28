@@ -10,6 +10,22 @@ How to
 * Call `PimpMyBand.BandManager.SetWallpaperAsync(WriteableBitmap, Color)` to launch **_Pimp my Band_**.
 * That's all!
 
+Sample
+======
+
+```csharp
+var isConnected = await PimpMyBand.BandManager.IsConnectedAsync();
+if (isConnected)
+{
+  if (MessageBox.Show("Hey, seems that you have a Band! Do you want to set our wallpaper?", "MyApp", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
+  {
+    var bitmap = LoadYourBitmap();
+    var accent = LoadYourColor();
+    await PimpMyBand.BandManager.SetWallpaper(bitmap, accent);
+  }
+}
+```
+
 Install
 =======
 You can install the library via [NuGet]:
